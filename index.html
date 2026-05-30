@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Daily Task Tracker</h1>
+            <p>Keep track of your everyday tasks effortlessly</p>
+        </header>
+
+        <main>
+            <!-- Add Task Section -->
+            <section class="add-task-section">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Add a new task..."
+                        class="task-input"
+                    />
+                    <select id="categorySelect" class="category-select">
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="health">Health</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button id="addTaskBtn" class="btn btn-add">Add Task</button>
+                </div>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="work">Work</button>
+                <button class="filter-btn" data-filter="personal">Personal</button>
+            </section>
+
+            <!-- Tasks List -->
+            <section class="tasks-section">
+                <div id="tasksList" class="tasks-list">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <p>No tasks yet. Add one to get started! 🚀</p>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <span class="stat-label">Total Tasks</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value" id="completedTasks">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Remaining</span>
+                    <span class="stat-value" id="remainingTasks">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Progress</span>
+                    <span class="stat-value" id="progressPercent">0%</span>
+                </div>
+            </section>
+
+            <!-- Clear Completed Button -->
+            <section class="actions-section">
+                <button id="clearCompletedBtn" class="btn btn-danger">Clear Completed Tasks</button>
+                <button id="exportBtn" class="btn btn-export">Export Tasks</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
