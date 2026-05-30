@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Time Zones</title>
+    <link rel="stylesheet" href="clock-styles.css">
+</head>
+<body>
+    <div class="clock-container">
+        <header>
+            <h1>🕐 Digital Clock</h1>
+            <p>Real-time clocks across different time zones</p>
+        </header>
+
+        <main>
+            <!-- Add Time Zone Section -->
+            <section class="add-timezone-section">
+                <div class="timezone-input-group">
+                    <select id="timezoneSelect" class="timezone-select">
+                        <option value="">Select a time zone...</option>
+                        <optgroup label="Americas">
+                            <option value="America/New_York">Eastern Time (ET)</option>
+                            <option value="America/Chicago">Central Time (CT)</option>
+                            <option value="America/Denver">Mountain Time (MT)</option>
+                            <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                            <option value="America/Anchorage">Alaska Time (AKT)</option>
+                            <option value="Pacific/Honolulu">Hawaii Time (HT)</option>
+                            <option value="America/Toronto">Eastern Time - Canada (ET)</option>
+                            <option value="America/Vancouver">Pacific Time - Canada (PT)</option>
+                            <option value="America/Mexico_City">Mexico City Time</option>
+                            <option value="America/Buenos_Aires">Buenos Aires Time</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                            <option value="Europe/London">London (GMT/BST)</option>
+                            <option value="Europe/Paris">Paris (CET/CEST)</option>
+                            <option value="Europe/Berlin">Berlin (CET/CEST)</option>
+                            <option value="Europe/Amsterdam">Amsterdam (CET/CEST)</option>
+                            <option value="Europe/Rome">Rome (CET/CEST)</option>
+                            <option value="Europe/Madrid">Madrid (CET/CEST)</option>
+                            <option value="Europe/Moscow">Moscow (MSK)</option>
+                            <option value="Europe/Istanbul">Istanbul (EET/EEST)</option>
+                        </optgroup>
+                        <optgroup label="Asia">
+                            <option value="Asia/Dubai">Dubai (GST)</option>
+                            <option value="Asia/Kolkata">India Standard Time (IST)</option>
+                            <option value="Asia/Bangkok">Bangkok (ICT)</option>
+                            <option value="Asia/Singapore">Singapore (SGT)</option>
+                            <option value="Asia/Hong_Kong">Hong Kong (HKT)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST)</option>
+                            <option value="Asia/Seoul">Seoul (KST)</option>
+                            <option value="Asia/Manila">Manila (PHT)</option>
+                            <option value="Asia/Kolkata">New Delhi (IST)</option>
+                        </optgroup>
+                        <optgroup label="Pacific">
+                            <option value="Australia/Sydney">Sydney (AEDT/AEST)</option>
+                            <option value="Australia/Melbourne">Melbourne (AEDT/AEST)</option>
+                            <option value="Asia/Auckland">Auckland (NZDT/NZST)</option>
+                            <option value="Pacific/Fiji">Fiji (FJT)</option>
+                        </optgroup>
+                        <optgroup label="Africa">
+                            <option value="Africa/Cairo">Cairo (EET)</option>
+                            <option value="Africa/Johannesburg">Johannesburg (SAST)</option>
+                            <option value="Africa/Lagos">Lagos (WAT)</option>
+                            <option value="Africa/Nairobi">Nairobi (EAT)</option>
+                        </optgroup>
+                    </select>
+                    <button id="addTimezoneBtn" class="btn btn-add-tz">Add Time Zone</button>
+                </div>
+                <div id="selectedTimezones" class="selected-timezones">
+                    <!-- Selected timezones will appear here -->
+                </div>
+            </section>
+
+            <!-- Clocks Display Section -->
+            <section class="clocks-section">
+                <div id="clocksGrid" class="clocks-grid">
+                    <!-- Clocks will be dynamically added here -->
+                </div>
+                <div id="emptyClocks" class="empty-state">
+                    <p>No time zones selected yet. Add one to get started! 🌍</p>
+                </div>
+            </section>
+
+            <!-- Quick Access Section -->
+            <section class="quick-access-section">
+                <h3>Quick Access</h3>
+                <div class="quick-buttons">
+                    <button class="quick-btn" onclick="clockManager.addQuickTimezone('America/New_York')">🗽 New York</button>
+                    <button class="quick-btn" onclick="clockManager.addQuickTimezone('Europe/London')">🇬🇧 London</button>
+                    <button class="quick-btn" onclick="clockManager.addQuickTimezone('Asia/Tokyo')">🗾 Tokyo</button>
+                    <button class="quick-btn" onclick="clockManager.addQuickTimezone('Australia/Sydney')">🦘 Sydney</button>
+                </div>
+            </section>
+
+            <!-- Controls Section -->
+            <section class="controls-section">
+                <button id="clearAllBtn" class="btn btn-danger">Clear All Time Zones</button>
+                <label class="format-toggle">
+                    <input type="checkbox" id="format24h" checked>
+                    <span>24-Hour Format</span>
+                </label>
+            </section>
+        </main>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
